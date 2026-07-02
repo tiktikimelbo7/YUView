@@ -1,7 +1,7 @@
 name: CI build
 
 on:
-  push:
+  Workflow_dispatch:
   release:
     types:
       - created
