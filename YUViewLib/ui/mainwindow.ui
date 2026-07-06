@@ -194,14 +194,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>300</width>
-     <height>50</height>
+     <width>43</width>
+     <height>70</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>524287</width>
-     <height>50</height>
+     <height>70</height>
     </size>
    </property>
    <property name="floating">

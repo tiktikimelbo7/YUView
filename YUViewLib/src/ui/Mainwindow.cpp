@@ -60,6 +60,11 @@ MainWindow::MainWindow(bool useAlternativeSources, QWidget *parent) : QMainWindo
 
   ui.setupUi(this);
 
+  // Disable vertical title bar for the playback dock to prevent the buttons from
+  // overlapping the "Playback" title text when the dock is at the bottom.
+  ui.playbackControllerDock->setFeatures(ui.playbackControllerDock->features() &
+                                         ~QDockWidget::DockWidgetVerticalTitleBar);
+
   // Create the update handler
   updater.reset(new updateHandler(this, useAlternativeSources));
 
