@@ -117,6 +117,8 @@ std::optional<Size> guessFrameSizeFromAcronymResolutionIndicators(const std::str
     return Size(176, 144);
   else if (name.find("_4cif") != std::string::npos)
     return Size(704, 576);
+  else if (name.find("512x512") != std::string::npos)
+    return Size(512, 512);
   else if (name.find("uhd") != std::string::npos)
     return Size(3840, 2160);
   else if (name.find("hd") != std::string::npos)
