@@ -208,6 +208,11 @@ InfoData playlistItemRawFile::getInfo() const
   const auto nrFrames =
     (this->properties().startEndRange.second - this->properties().startEndRange.first + 1);
   info.items.append(InfoItem("Num Frames", std::to_string(nrFrames)));
+  if (this->properties().frameRate > 0.0)
+  {
+    double durationSec = nrFrames / this->properties().frameRate;
+    info.items.append(InfoItem("Duration", QString("%1 s").arg(durationSec, 0, 'f', 2).toStdString()));
+  }
   info.items.append(InfoItem("Bytes per Frame", std::to_string(this->video->getBytesPerFrame())));
 
   if (this->dataSource.isOk() && this->video->isFormatValid() && !this->isY4MFile)
